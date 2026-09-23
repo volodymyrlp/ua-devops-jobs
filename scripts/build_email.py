@@ -100,6 +100,10 @@ def main():
     if jobs:
         parts.append(f'<p style="color:#555;margin-top:0">Нових вакансій: <b>{len(jobs)}</b> ({e(summary)}). '
                      "⭐ означає, що в назві є Junior, Trainee або Intern.</p>")
+    elif run.get("errors") and not run.get("stats"):
+        # every source failed, so "no new jobs" would be a lie
+        parts.append('<p style="color:#b91c1c">Не вдалося прочитати жоден сайт, тому вакансій немає. '
+                     "Причина внизу листа.</p>")
     else:
         parts.append('<p style="color:#555">Нових вакансій з минулого звіту немає. Скіл відпрацював нормально.</p>')
 
