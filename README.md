@@ -1,7 +1,7 @@
 # ua-devops-jobs
 
-Agent skill for Claude Code. It looks for Trainee / Junior DevOps, SysAdmin and Cloud
-jobs in Ukraine and sends a short report to Gmail every day.
+Agent skill for Claude Code. It looks for Trainee / Junior DevOps, SysAdmin, Cloud and Network
+jobs in Ukraine and Poland and sends a short report to Gmail every day.
 
 - `scripts/fetch_jobs.py` collects new jobs from Djinni, DOU, Robota.ua, LinkedIn,
   RemoteOK, We Work Remotely and a Telegram channel. Python standard library only.

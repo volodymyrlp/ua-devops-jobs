@@ -24,6 +24,11 @@ MANUAL_LINKS = [
     ("OLX Робота", "DevOps", "https://www.olx.ua/uk/rabota/q-devops/"),
     ("OLX Робота", "Системний адміністратор", "https://www.olx.ua/uk/rabota/q-системний-адміністратор/"),
     ("Grc.ua", "DevOps", "https://grc.ua/searchjob/k-devops"),
+    ("Work.ua", "Мережевий інженер", "https://www.work.ua/jobs-мережевий+інженер/"),
+    ("Pracuj.pl", "Junior DevOps, Польща", "https://www.pracuj.pl/praca/junior%20devops;kw"),
+    ("Pracuj.pl", "Junior Network Engineer, Польща", "https://www.pracuj.pl/praca/junior%20network%20engineer;kw"),
+    ("Just Join IT", "DevOps junior, Польща", "https://justjoin.it/job-offers/all-locations/devops?experience-level=junior"),
+    ("No Fluff Jobs", "DevOps junior, Польща", "https://nofluffjobs.com/pl/devops?criteria=seniority%3Dtrainee,junior"),
 ]
 
 REASONS = {
@@ -83,6 +88,7 @@ def main():
 
     jobs = [j for j in run["jobs"] if j["id"] not in drop]
     ua = [j for j in jobs if j["region"] == "ua"]
+    pl = [j for j in jobs if j["region"] == "pl"]
     intl = [j for j in jobs if j["region"] == "intl"]
 
     by_source = {}
@@ -91,11 +97,11 @@ def main():
     summary = ", ".join(f"{k}: {v}" for k, v in sorted(by_source.items(), key=lambda x: -x[1]))
 
     today = datetime.now().strftime("%d.%m.%Y")
-    subject = f"DevOps / SysAdmin / Cloud вакансії {today}, нових: {len(jobs)}"
+    subject = f"DevOps / SysAdmin / Cloud / Network вакансії {today}, нових: {len(jobs)}"
 
     parts = [
         '<div style="font-family:-apple-system,Segoe UI,Arial,sans-serif;max-width:680px;margin:auto;color:#222">',
-        f'<h1 style="font-size:22px;margin-bottom:4px">Вакансії DevOps / SysAdmin / Cloud, {today}</h1>',
+        f'<h1 style="font-size:22px;margin-bottom:4px">Вакансії DevOps / SysAdmin / Cloud / Network, {today}</h1>',
     ]
     if jobs:
         parts.append(f'<p style="color:#555;margin-top:0">Нових вакансій: <b>{len(jobs)}</b> ({e(summary)}). '
@@ -108,6 +114,7 @@ def main():
         parts.append('<p style="color:#555">Нових вакансій з минулого звіту немає. Скіл відпрацював нормально.</p>')
 
     parts.append(section("🇺🇦 Україна: усі міста і віддалено", ua))
+    parts.append(section("🇵🇱 Польща", pl))
     parts.append(section("🌍 Міжнародні, remote", intl))
 
     links = "".join(f'<li><a href="{e(u)}">{e(site)}: {e(label)}</a></li>' for site, label, u in MANUAL_LINKS)
