@@ -1,12 +1,12 @@
 ---
 name: ua-devops-jobs
-description: Daily job search for a Trainee/Junior DevOps, SysAdmin, Cloud and Network engineer in any city of Ukraine or remote, in Poland, plus remote international jobs. Collects new vacancies from Djinni, DOU, Robota.ua, LinkedIn, RemoteOK, We Work Remotely and Telegram, filters out senior and russian-linked jobs, and emails a report in Ukrainian to the user's own Gmail. Use this skill whenever the user asks to find, check or send DevOps / сисадмін / cloud вакансії, "пошукай роботу", "які нові вакансії", "надішли звіт про вакансії", or when the daily scheduled job-search task runs — even if they do not name the sites or the skill.
+description: Daily job search for a Trainee/Junior DevOps, SysAdmin, Cloud and Network engineer / administrator in any city of Ukraine or remote, in Poland, plus remote international jobs. Collects new vacancies from Djinni, DOU, Robota.ua, LinkedIn, RemoteOK, We Work Remotely and Telegram, filters out senior and russian-linked jobs, and emails a report in Ukrainian to the user's own Gmail. Use this skill whenever the user asks to find, check or send DevOps / сисадмін / cloud вакансії, "пошукай роботу", "які нові вакансії", "надішли звіт про вакансії", or when the daily scheduled job-search task runs — even if they do not name the sites or the skill.
 ---
 
 # Пошук DevOps / SysAdmin / Cloud / Network вакансій
 
 The user is a DevOps student in Ukraine looking for the first job: Trainee or Junior
-DevOps, system administrator, cloud engineer, network engineer and close roles (SRE,
+DevOps, system administrator, cloud engineer, network engineer, network administrator and close roles (SRE,
 platform, helpdesk with Linux). Good places: any city in Ukraine (office or hybrid), remote
 in Ukraine, any job in Poland (office, hybrid or remote), remote for international companies. The report goes to the user's own Gmail in Ukrainian.
 
@@ -126,8 +126,8 @@ go to the manual links block.
 |---|---|---|
 | Djinni | RSS, `exp_level=no_exp,1y` | DevOps, Sysadmin, Cloud; RSS has no company name |
 | DOU | RSS, `exp=0-1,1-3` | DevOps, SysAdmin |
-| Robota.ua | public JSON API | 7 keyword searches (incl. network engineer), all cities |
-| LinkedIn | public guest search | 9 requests: Ukraine ×5, Poland ×4 (`region=pl`), entry level, last 3 days; keep the volume low |
+| Robota.ua | public JSON API | 9 keyword searches (incl. network engineer / administrator), all cities |
+| LinkedIn | public guest search | 11 requests: Ukraine ×6, Poland ×5 (`region=pl`), entry level, last 3 days; keep the volume low |
 | RemoteOK, We Work Remotely | JSON / RSS | international remote, mostly senior, often 0 |
 | Telegram `@remote_devops_jobs` | t.me/s web preview | the grade is added to the title as `[senior]` |
 | Work.ua, Jooble, OLX, Grc.ua, Pracuj.pl, Just Join IT, No Fluff Jobs | links only | blocked by Cloudflare or no public API |

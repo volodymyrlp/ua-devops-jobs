@@ -25,8 +25,10 @@ MANUAL_LINKS = [
     ("OLX Робота", "Системний адміністратор", "https://www.olx.ua/uk/rabota/q-системний-адміністратор/"),
     ("Grc.ua", "DevOps", "https://grc.ua/searchjob/k-devops"),
     ("Work.ua", "Мережевий інженер", "https://www.work.ua/jobs-мережевий+інженер/"),
+    ("Work.ua", "Мережевий адміністратор", "https://www.work.ua/jobs-мережевий+адміністратор/"),
     ("Pracuj.pl", "Junior DevOps, Польща", "https://www.pracuj.pl/praca/junior%20devops;kw"),
     ("Pracuj.pl", "Junior Network Engineer, Польща", "https://www.pracuj.pl/praca/junior%20network%20engineer;kw"),
+    ("Pracuj.pl", "Administrator sieci, Польща", "https://www.pracuj.pl/praca/administrator%20sieci;kw"),
     ("Just Join IT", "DevOps junior, Польща", "https://justjoin.it/job-offers/all-locations/devops?experience-level=junior"),
     ("No Fluff Jobs", "DevOps junior, Польща", "https://nofluffjobs.com/pl/devops?criteria=seniority%3Dtrainee,junior"),
 ]

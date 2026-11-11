@@ -27,7 +27,8 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 ROLE_RE = re.compile(
     r"devops|dev ops|\bsre\b|site reliability|sysadmin|sys admin|system admin|systems admin|"
     r"сисадмін|системн\w* адмін|адміністратор|cloud|platform engineer|infrastructure|"
-    r"інфраструктур|kubernetes|\blinux\b|network engineer|мережев\w* інженер|helpdesk|help desk|"
+    r"інфраструктур|kubernetes|\blinux\b|network engineer|network admin|мережев\w* інженер|"
+    r"мережев\w* адмін|administrator sieci|administrator system|helpdesk|help desk|"
     r"it support|технічн\w* підтримк|devsecops|mlops|release engineer|build engineer",
     re.I,
 )
@@ -147,7 +148,7 @@ def dou():
 def robota():
     out = []
     for kw in ["devops", "системний адміністратор", "cloud engineer", "sre", "linux адміністратор",
-               "network engineer", "мережевий інженер"]:
+               "network engineer", "мережевий інженер", "network administrator", "мережевий адміністратор"]:
         data = json.loads(get("https://api.rabota.ua/vacancy/search", {"keyWords": kw, "count": 40}))
         for v in data.get("documents", []):
             salary = ""
@@ -226,6 +227,7 @@ def linkedin():
         ("system administrator", "Ukraine", {}, "ua"),
         ("cloud engineer", "Ukraine", {}, "ua"),
         ("network engineer", "Ukraine", {}, "ua"),
+        ("network administrator", "Ukraine", {}, "ua"),
         # the guest API ignores the remote filter (f_WT), so search "remote" by words.
         # this finds foreign companies that hire remote people in Ukraine
         ("remote devops", "Ukraine", {}, "ua"),
@@ -234,6 +236,7 @@ def linkedin():
         ("system administrator", "Poland", {}, "pl"),
         ("cloud engineer", "Poland", {}, "pl"),
         ("network engineer", "Poland", {}, "pl"),
+        ("network administrator", "Poland", {}, "pl"),
     ]
     out = []
     for keywords, location, extra, region in searches:
